@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game </title>
+</head>
+<body style="background-color: rgb(180, 118, 238); text-align: center;">
+    <select id="choice" style="background-color:rgb(238, 140, 140); border: 2px solid black;"> 
+        <option value="1">rock</option>
+        <option value="2">paper</option>
+        <option value="3">scissors</option>   
+    </select> <br><br>
+    <input type="button" onclick="fun()" value="click" style="border: 2px solid black ;"> <br><br>
+    <p id="result"></p>
+    <script>
+        function fun(){
+            var op=parseFloat(document.getElementById("choice").value)
+            var a=Math.floor(Math.random()*3)+1;
+           if(a==1){
+            window.alert("computer choice is rock");
+           }
+            else if(a==2){
+              window.alert("computer choice is paper");
+            }
+            else{
+                window.alert("computer choice is Scissors");
+            }
+            if(a==op){
+                document.getElementById("result").innerHTML="game is TIE";
+            }
+          else if ((a==1 && op==2)||(a==2 && op==3)||(a==3 && op==1)){
+            document.getElementById("result").innerHTML="you won the game";
+            }
+            else{
+                document.getElementById("result").innerHTML="computer won the game";
+            }
+        }
+    </script>
+</body>
+</html>

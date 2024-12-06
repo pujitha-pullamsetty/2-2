@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body style="background-color: rgb(177, 39, 29); text-align:center;">
+    <h3>CALCULATOR</h3>
+    <input type="number" id="num1" style="border: 5px solid black; height:30px ; background-color: rgb(238, 196, 168)"> <br> <br>
+    <input type="number" id="num2" style="border: 5px solid black; height:30px; background-color: rgb(238, 196, 168)"><br> <br>
+    <select id="operation">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select> 
+    <button onclick="fun()">Submit</button> <br> <br>
+    <input type="number" id="name" style="border: 5px solid black; height:30px; background-color: rgb(238, 196, 168)"readonly>
+    <script>
+        function fun(){
+            var n1=parseFloat(document.getElementById("num1").value);
+            var n2=parseFloat(document.getElementById("num2").value);    
+            var op=document.getElementById("operation").value;
+            var n=document.getElementById("name");
+            if(op=='+'){ n.value=n1+n2; }
+            else if(op=="-"){ n.value=n1-n2; }        
+            else if(op=="*"){ n.value=n1*n2; }        
+            else if(op=="/"){ n.value=n1/n2; }   
+            else if(op=="%"){ n.value=n1%n2; }
+            else {n.value=n1+n2;}
+        }       
+    </script>
+</body>
+</html>
